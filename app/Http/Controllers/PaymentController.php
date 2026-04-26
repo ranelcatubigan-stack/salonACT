@@ -12,7 +12,9 @@ class PaymentController extends Controller
     public function index()
     {
         $payments = Payment::all();
-        $appointments = Appointment::all();
+
+    // IMPORTANT: load service relationship
+        $appointments = Appointment::with('service')->get();
 
         return view('payments.index', compact('payments', 'appointments'));
     }
@@ -27,6 +29,12 @@ class PaymentController extends Controller
     // Store payment
     public function store(Request $request)
     {
+        $request->validate([
+            'appointment_id' => 'required|exists:appointments,id',
+            'amount' => 'required|numeric',
+            'pay' => 'required'
+        ]);
+
         Payment::create([
             'appointment_id' => $request->appointment_id,
             'amount' => $request->amount,
@@ -34,8 +42,10 @@ class PaymentController extends Controller
             'payment_date' => now()
         ]);
 
-        return redirect()->route('payments.index')->with('success', 'Payment recorded!');
+            return redirect('/payments');
     }
+
+    
 
     // Update status
     public function updateStatus($id)

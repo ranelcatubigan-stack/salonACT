@@ -27,7 +27,6 @@ Route::delete('/services/{id}', [ServiceController::class, 'destroy']);
 
 Route::post('/appointments123', [AppointmentController::class, 'store']);
 
-Route::get('/payments', [PaymentController::class, 'index'])->name('payments.index');
-Route::get('/payments/create/{booking_id}', [PaymentController::class, 'create'])->name('payments.create');
-Route::post('/payments/store', [PaymentController::class, 'store'])->name('payments.store');
-Route::get('/payments/status/{id}', [PaymentController::class, 'updateStatus'])->name('payments.status');
+Route::get('/payments', [PaymentController::class, 'index']);
+Route::post('/payments123', [PaymentController::class, 'store']);
+Route::put('/payments/{id}/status', [PaymentController::class, 'updateStatus']);
