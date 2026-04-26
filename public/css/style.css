@@ -1,0 +1,154 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TITLE
+========================= */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   FORM STYLE
+========================= */
+.service-form {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #34495e;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52,152,219,0.3);
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-submit {
+  background: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #2980b9;
+}
+
+/* =========================
+   TABLE STYLE
+========================= */
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.service-table thead {
+  background: #3498db;
+  color: white;
+}
+
+.service-table th, 
+.service-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.service-table tbody tr:hover {
+  background: #f1f1f1;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.service-table a {
+  text-decoration: none;
+  color: #fff;
+  background: #27ae60;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.service-table button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.service-table button:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   BILL BOX
+========================= */
+#billBox {
+  background: #ecf0f1;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* =========================
+   CHECKBOX STYLE
+========================= */
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+}

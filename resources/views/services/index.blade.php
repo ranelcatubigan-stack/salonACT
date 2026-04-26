@@ -8,8 +8,9 @@
 </head>
 <body>
 
-
-
+<a href="/services" class="{{ request()->is('services') ? 'active' : '' }}">Service Management</a>  
+<a href="/appointments" class="{{ request()->is('appointments') ? 'active' : '' }}">Appointment Management</a>
+<a href="/payments" class="{{ request()->is('payments') ? 'active' : '' }}">Payment Management</a>
 <div class="container">
   <h1>Service Management</h1>
 
