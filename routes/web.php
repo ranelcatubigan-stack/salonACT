@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\PaymentController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,3 +27,7 @@ Route::delete('/services/{id}', [ServiceController::class, 'destroy']);
 
 Route::post('/appointments123', [AppointmentController::class, 'store']);
 
+Route::get('/payments', [PaymentController::class, 'index'])->name('payments.index');
+Route::get('/payments/create/{booking_id}', [PaymentController::class, 'create'])->name('payments.create');
+Route::post('/payments/store', [PaymentController::class, 'store'])->name('payments.store');
+Route::get('/payments/status/{id}', [PaymentController::class, 'updateStatus'])->name('payments.status');
