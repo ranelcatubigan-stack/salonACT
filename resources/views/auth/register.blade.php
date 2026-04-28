@@ -1,4 +1,5 @@
 <x-guest-layout>
+    <link rel="stylesheet" href="{{ asset('css/welstyle.css') }}">
     <form method="POST" action="{{ route('register') }}">
         @csrf
 

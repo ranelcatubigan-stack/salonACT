@@ -10,6 +10,8 @@
 
 <div class="container">
   <h1>Payment Management</h1>
+  <button class="btn-submit" onclick="window.location.href='/appointments'">Appointment</button>
+  <button class="btn-submit" onclick="window.location.href='/services'">Service</button>
 
   <!-- ===================== -->
   <!-- ✅ PAYMENT FORM -->
@@ -65,16 +67,23 @@
       </tr>
     </thead>
     <tbody>
-      @foreach($payments as $payment)
-      <tr>
-        <td>{{ $payment->id }}</td>
-        <td>Booking #{{ $payment->appointment_id }}</td>
-        <td>{{ $payment->amount }}</td>
-        <td>{{ $payment->status }}</td>
-        <td>{{ $payment->payment_date }}</td>
-      </tr>
-      @endforeach
-    </tbody>
+  @foreach($payments as $payment)
+  <tr>
+    <td>#{{ $payment->id }}</td>
+    <td>
+        <strong>{{ $payment->appointment->service->service_name ?? 'Service' }}</strong><br>
+        <small style="color: #888;">Booking #{{ $payment->appointment_id }}</small>
+    </td>
+    <td style="font-weight: bold;">₱{{ number_format($payment->amount, 2) }}</td>
+    <td>
+        <span class="status-badge {{ $payment->status == 'paid' ? 'status-paid' : 'status-pending' }}">
+            {{ $payment->status }}
+        </span>
+    </td>
+    <td>{{ date('M d, Y', strtotime($payment->payment_date)) }}</td>
+  </tr>
+  @endforeach
+</tbody>
   </table>
 </div>
 

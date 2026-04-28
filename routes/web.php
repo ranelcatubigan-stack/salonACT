@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/services', [ServiceController::class, 'index']);
+Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/appointments', [AppointmentController::class, 'index']);
 
 Route::middleware('auth')->group(function () {

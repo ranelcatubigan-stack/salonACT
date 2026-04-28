@@ -11,6 +11,8 @@
 
 
   <h1>Service Management</h1>
+  <button class="btn-submit" onclick="window.location.href='/appointments'">Appointment</button>
+  <button class="btn-submit" onclick="window.location.href='/payments'">Payment</button>
 
   <form action="/services123" method="POST" class="service-form">
     @csrf
